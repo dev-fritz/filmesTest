@@ -3,7 +3,9 @@ package com.github.filmesAlura.modelos;
 public class Serie extends Titulo {
     private int numeroEpisodios;
     private int numeroTemporadas;
+    private int minutosPorEpisodio;
     private boolean ativa;
+
 
     public int getNumeroEpisodios(){
         return numeroEpisodios;
@@ -25,4 +27,18 @@ public class Serie extends Titulo {
     public void setAtiva(boolean ativa){
         this.ativa = ativa;
     }
+
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
+    }
+
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return numeroTemporadas * numeroEpisodios * minutosPorEpisodio;
+    }
+
 }

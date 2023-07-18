@@ -1,19 +1,44 @@
+//import com.github.filmesAlura.modelos.Filme;
 import com.github.filmesAlura.modelos.Filme;
+import com.github.filmesAlura.modelos.Serie;
+import com.github.filmesAlura.calculo.CalculadoraDeTempo;
 
 public class Main {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setName("Corno de 30 anos!");
-        meuFilme.setAnoLanc(2013);
-        meuFilme.setMinutos(125);
-        meuFilme.setInPlano(true);
+        Serie gato = new Serie();
+        CalculadoraDeTempo calc = new CalculadoraDeTempo();
+        Filme film1 = new Filme();
+        Filme film2 = new Filme();
 
-        meuFilme.fichaTecnica();
-        meuFilme.nota(9);
-        meuFilme.nota(9);
-        meuFilme.nota(9);
-        meuFilme.nota(10);
-        System.out.println(meuFilme.pegaMedia());
-        System.out.printf("%d Avaliações", meuFilme.getTotalAvaliacoes());
+        film1.setName("Homem Arania");
+        film1.setDuracaoEmMinutos(123);
+        film1.avalia(8.6);
+
+        film2.setName("Homem Formiga");
+        film2.setDuracaoEmMinutos(86);
+        film2.avalia(7.4);
+
+
+        gato.setName("El Gato de Botas");
+        gato.setIncluidoNoPlano(true);
+        gato.avalia(9);
+        gato.avalia(7.6);
+        gato.avalia(6.8);
+        gato.avalia(8.4);
+        gato.avalia(10);
+
+        gato.setMinutosPorEpisodio(43);
+        gato.setNumeroEpisodios(24);
+        gato.setNumeroTemporadas(4);
+
+        gato.fichaTecnica();
+
+        calc.adicionar(film2);
+        calc.adicionar(film1);
+
+        System.out.println(calc.getTempoTotal());
+
+        System.out.printf("Tempo para maratonar a serie: %d minutos", gato.getDuracaoEmMinutos());
+
     }
 }

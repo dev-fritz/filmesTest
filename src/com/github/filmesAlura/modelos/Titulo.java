@@ -33,13 +33,6 @@ public class Titulo {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public int getTotalDeAvaliacoes(){
-        return totalDeAvaliacoes;
-    }
-    public void setTotalDeAvaliacoes(int totalDeAvaliacoes){
-        this.totalDeAvaliacoes = totalDeAvaliacoes;
-    }
-
     public boolean isIncluidoNoPlano() {
         return incluidoNoPlano;
     }
@@ -47,22 +40,17 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public double getAvaliacoes(){
-        return avaliacoes;
-    }
-    public void setAvaliacoes(double avaliacoes){
-        this.avaliacoes = avaliacoes;
-    }
-
     public void fichaTecnica(){
         System.out.printf("""
                 Nome: %s
                 Duração: %d minutos
-                Avaliação: %.1f""",name,duracaoEmMinutos,pegaMedia());
+                Avaliação: %.1f
+                """,name,duracaoEmMinutos,pegaMedia());
     }
 
     public void avalia(double nota){
         avaliacoes += nota;
+        totalDeAvaliacoes++;
     }
 
     public double pegaMedia(){
