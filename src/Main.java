@@ -1,4 +1,6 @@
 //import com.github.filmesAlura.modelos.Filme;
+import com.github.filmesAlura.calculo.FiltroRecomendacao;
+import com.github.filmesAlura.modelos.Episodio;
 import com.github.filmesAlura.modelos.Filme;
 import com.github.filmesAlura.modelos.Serie;
 import com.github.filmesAlura.calculo.CalculadoraDeTempo;
@@ -38,7 +40,14 @@ public class Main {
 
         System.out.println(calc.getTempoTotal());
 
-        System.out.printf("Tempo para maratonar a serie: %d minutos", gato.getDuracaoEmMinutos());
+        System.out.printf("Tempo para maratonar a serie: %d minutos%n", gato.getDuracaoEmMinutos());
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtro(film1);
 
+        Episodio gat = new Episodio();
+        gat.setNumero(1);
+        gato.setTotalVisualizacoes(999);
+        gat.setSerie(gato);
+        filtro.filtro(gat);
     }
 }

@@ -6,7 +6,7 @@ public class Titulo {
     private int anoDeLancamento;
     private int duracaoEmMinutos;
     private int totalDeAvaliacoes;
-
+    private int totalVisualizacoes;
     private boolean incluidoNoPlano;
 
     private double avaliacoes = 0;
@@ -40,6 +40,14 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
+    public int getTotalVisualizacoes() {
+        return totalVisualizacoes;
+    }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
+        this.totalVisualizacoes = totalVisualizacoes;
+    }
+
     public void fichaTecnica(){
         System.out.printf("""
                 Nome: %s
@@ -56,4 +64,5 @@ public class Titulo {
     public double pegaMedia(){
         return avaliacoes / totalDeAvaliacoes;
     }
+
 }

@@ -1,6 +1,8 @@
 package com.github.filmesAlura.modelos;
 
-public class Episodio {
+import com.github.filmesAlura.calculo.Classificavel;
+
+public class Episodio implements Classificavel {
     private String name;
     private int numero;
     private Serie serie;
@@ -26,4 +28,11 @@ public class Episodio {
     public void setSerie(Serie serie) {
         this.serie = serie;
     }
+
+    @Override
+    public int getClassificacao(){
+        if (serie.getTotalVisualizacoes() >= 100){return 4;}
+        else {return 3;}
+    }
+
 }

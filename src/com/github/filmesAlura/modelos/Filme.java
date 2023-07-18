@@ -1,6 +1,8 @@
 package com.github.filmesAlura.modelos;
 
-public class Filme extends Titulo{
+import com.github.filmesAlura.calculo.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
     public String getDiretor(){
@@ -10,4 +12,13 @@ public class Filme extends Titulo{
         this.diretor = diretor;
     }
 
+    @Override
+    public int getClassificacao() {
+        return (int) pegaMedia() / 2;
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 }
